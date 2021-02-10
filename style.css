@@ -80,6 +80,7 @@ footer {
   padding: 14px 16px;
   font-size: 17px;
   width: 50%;
+    height: 100px;
 }
 
 .tablink:hover {
@@ -93,6 +94,8 @@ footer {
   padding: 100px 20px;
   height: 100%;
 }
+
+
 
 #Goddess {background-color: blue;}
 #ShampooBar {background-color: lightyellow;}
