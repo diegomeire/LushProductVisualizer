@@ -22,7 +22,7 @@
 
   <!-- The following libraries and polyfills are recommended to maximize browser support -->
   <!-- NOTE: you must adjust the paths as appropriate for your project -->
-      
+
   <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
   <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
 
@@ -40,33 +40,40 @@
 
 </head>
 <body>
-    
-            
+
+
             <div id="Home" class="tabcontent">
                 <model-viewer id="preview3d" src="https://diegomeire.github.io/LushProductVisualizer/Goddess.gltf" ios-src="https://diegomeire.github.io/LushProductVisualizer/Goddess.usdz" alt="3D visualization" shadow-intensity="1" camera-controls interaction-prompt="auto" auto-rotate ar magic-leap data-js-focus-visible/>
             </div>
     <div>
+            <button class="tablink" onclick="openPage('Intergalactic', this, 'blue')" id="defaultOpen">Intergalactic</button>
             <button class="tablink" onclick="openPage('Goddess', this, 'blue')" id="defaultOpen">Goddess</button>
             <button class="tablink" onclick="openPage('GoddessScanned', this, 'blue')" id="defaultOpen">Goddess 3D Scanned</button>
             <button class="tablink" onclick="openPage('Shampoo', this, 'blue')">Shampoo Bar</button>
-        
+
     </div>
-    
-    
+
+
 </body>
         <script>
               function openPage(pageName, elmnt, color) {
+                if (pageName == 'Intergalactic'){
+                 // Show the specific tab content
+                   document.getElementById("preview3d").src = "https://diegomeire.github.io/LushProductVisualizer/galactic_reduced.gltf";
+                   document.getElementById("preview3d").setAttribute("ios-src", "https://diegomeire.github.io/LushProductVisualizer/galactic_reduced.usdz");
+
+                }
                  if (pageName == 'Goddess'){
                   // Show the specific tab content
                     document.getElementById("preview3d").src = "https://diegomeire.github.io/LushProductVisualizer/Goddess.gltf";
                     document.getElementById("preview3d").setAttribute("ios-src", "https://diegomeire.github.io/LushProductVisualizer/Goddess.usdz");
-                
+
                  }
                   if (pageName == 'GoddessScanned'){
                   // Show the specific tab content
                     document.getElementById("preview3d").src = "https://diegomeire.github.io/LushProductVisualizer/GoddessScanned.gltf";
                     document.getElementById("preview3d").setAttribute("ios-src", "https://diegomeire.github.io/LushProductVisualizer/GoddessScanned.usdz");
-                
+
                  }
                  if (pageName == 'Shampoo'){
                   // Show the specific tab content
@@ -80,7 +87,7 @@
                   }
                  elmnt.style.backgroundColor = color;
                 }
-            
+
             // Get the element with id="defaultOpen" and click on it
             document.getElementById("defaultOpen").click();
     </script>
